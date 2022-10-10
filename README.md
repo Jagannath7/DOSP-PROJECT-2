@@ -26,7 +26,7 @@ erl
 
 2.  Compile all the required files
 
-```bash
+```md
 c(main_sup). --> Supervisor for main actors, entry point to project
 c(gs_driver_serv). --> Driver actor for gossip, this file initiates and terminates gossip algorithm
 c(gs_node_supervisor). --> Supervisor for gossip nodes
