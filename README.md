@@ -28,7 +28,7 @@ erl
 
 ```md
 c(main_sup). --> Supervisor for main actors, entry point to project
-c(gs_driver_serv). --> Driver actor for gossip, this file initiates and terminates gossip algorithm
+c(gs_driver_serv). --> Driver actor for gossip, this file initiates & terminates gossip algorithm
 c(gs_node_supervisor). --> Supervisor for gossip nodes
 c(gs_worker). --> Actor for gossip
 c(ps_driver_serv). --> Driver file for push-sum
