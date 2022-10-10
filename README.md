@@ -24,42 +24,33 @@ project1/root_supervisor.erl
 erl
 ```
 
-2.  Compile all required files
+2.  Compile all the required files
 
 ```bash
-c(root_supervisor).
-c(server).
-c(client).
-c(worker).
+c(main_sup). --> Supervisor for main actors, entry point to project
+c(gs_driver_serv). --> Driver actor for gossip, this file initiates and terminates gossip algorithm
+c(gs_node_supervisor). --> Supervisor for gossip nodes
+c(gs_worker). --> Actor for gossip
+c(ps_driver_serv). --> Driver file for push-sum
+c(ps_node_supervisor). --> Supervisor for push-sum nodes
+c(ps_worker). --> Actor for push-sum
+c(topology_serv). --> Supervisor for topology
+c(topo). --> Topology helper file
+
 ```
 
 3.  Run
 
 ```bash
-erl -smp enable -sname root -setcookie sunnydhama -pa ebin -s root_supervisor main [k | ip_addr]
+erl -noshell -s main_sup start numNodes topology algorithm
 ```
 
-examples
+examples :-
 
 ```bash
-erl -smp enable -sname root -setcookie sunnydhama -pa ebin -s root_supervisor main 10.20.52.41
-erl -smp enable -sname root -setcookie sunnydhama -pa ebin -s root_supervisor main 6
+erl -noshell -s main_sup start 10000 line gossip -> for gossip
+erl -noshell -s main_sup start 10000 line pushsum -> for pushsum
 ```
-
-4. Please see example images in this folder.
-
----
-
-## Implementation Details
-
-For local implementation follow the Usage guidelines above.
-
-```bash
-erl -smp enable -sname root -setcookie sunnydhama -pa ebin -s root_supervisor main [k | ip_addr]
-```
-
-where `k=number of leading zeros` for the generated bitcoins required.  
-`ip_addr= IP Address of the server` you want to connect to, in this case the local machine acts aa a miner
 
 ## What is Working ?
 
