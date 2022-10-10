@@ -48,8 +48,8 @@ erl -noshell -s main_sup start numNodes topology algorithm
 examples :-
 
 ```bash
-erl -noshell -s main_sup start 10000 line gossip -> for gossip
-erl -noshell -s main_sup start 10000 line pushsum -> for pushsum
+erl -noshell -s main_sup start 10000 line gossip 
+erl -noshell -s main_sup start 10000 line pushsum 
 ```
 
 ## What is Working ?
